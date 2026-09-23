@@ -227,22 +227,26 @@ h3 {
 }
 
 .language-switcher button {
-  min-height: 38px;
-  padding: 0.48rem 0.72rem;
-  border: 0;
-  border-radius: 999px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 1.45rem;
   font-weight: 750;
+  line-height: 1;
 }
 
 .language-switcher button[aria-pressed="true"] {
-  background: linear-gradient(135deg, var(--gold), #b87c25);
-  color: #201403;
-  box-shadow: 0 4px 20px rgba(239, 199, 111, 0.15);
+  border-color: rgba(239, 199, 111, 0.72);
+  background: rgba(239, 199, 111, 0.1);
+  box-shadow: 0 0 0 3px rgba(239, 199, 111, 0.08), 0 4px 20px rgba(0, 0, 0, 0.24);
 }
 
 .hero {
@@ -365,7 +369,7 @@ h3 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
 }
 
@@ -447,6 +451,17 @@ h3 {
   transform: translateY(-2px);
 }
 
+.project-link-disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+.project-link-disabled:hover {
+  background: transparent;
+  color: var(--muted);
+  transform: none;
+}
+
 .status-section {
   padding-bottom: clamp(5rem, 9vw, 9rem);
 }
@@ -513,7 +528,7 @@ h3 {
 }
 
 .copyright {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .compact-header {
@@ -688,8 +703,9 @@ h3 {
   }
 
   .language-switcher button {
-    padding-inline: 0.58rem;
-    font-size: 0.73rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1.35rem;
   }
 
   .hero {
