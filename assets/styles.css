@@ -616,6 +616,65 @@ h3 {
   margin: 1rem 0 2rem;
 }
 
+.calendar-launch {
+  margin-top: clamp(0.8rem, 2vw, 1.35rem);
+}
+
+.calendar-launch-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 74px;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(239, 199, 111, 0.42);
+  border-radius: 18px;
+  background:
+    linear-gradient(110deg, rgba(123, 217, 211, 0.12), rgba(239, 199, 111, 0.1)),
+    rgba(6, 23, 30, 0.9);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.calendar-launch-link:hover {
+  border-color: var(--gold);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.calendar-launch-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.calendar-launch-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.calendar-launch-copy strong {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.09em;
+}
+
+.calendar-launch-copy small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.calendar-launch-arrow {
+  color: var(--aqua-bright);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
 @media (max-width: 980px) {
   .header-inner {
     grid-template-columns: 1fr auto;
