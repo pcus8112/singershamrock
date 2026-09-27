@@ -12,6 +12,11 @@
       language_label: "Choose language",
       calendar_link: "Discover your Shamrock date",
       calendar_link_aria: "Open the Shamrock Calendar",
+      calendar_phase_new: "New-moon phase",
+      calendar_phase_waxing: "Waxing moon",
+      calendar_phase_full: "Full-moon phase",
+      calendar_phase_waning: "Waning moon",
+      calendar_festival: "{name} festival day {day}",
       legal_nav_label: "Legal information",
       nav_purpose: "Purpose",
       nav_realizations: "Realizations",
@@ -88,6 +93,11 @@
       language_label: "Choisir la langue",
       calendar_link: "Découvrez votre date Shamrock",
       calendar_link_aria: "Ouvrir le Shamrock Calendar",
+      calendar_phase_new: "Phase de nouvelle lune",
+      calendar_phase_waxing: "Lune croissante",
+      calendar_phase_full: "Phase de pleine lune",
+      calendar_phase_waning: "Lune décroissante",
+      calendar_festival: "Jour {day} de la fête de {name}",
       legal_nav_label: "Renseignements juridiques",
       nav_purpose: "Raison d’être",
       nav_realizations: "Réalisations",
@@ -164,6 +174,11 @@
       language_label: "Sprache wählen",
       calendar_link: "Entdecke dein Shamrock-Datum",
       calendar_link_aria: "Shamrock Calendar öffnen",
+      calendar_phase_new: "Neumondphase",
+      calendar_phase_waxing: "Zunehmender Mond",
+      calendar_phase_full: "Vollmondphase",
+      calendar_phase_waning: "Abnehmender Mond",
+      calendar_festival: "{name}-Festtag {day}",
       legal_nav_label: "Rechtliche Informationen",
       nav_purpose: "Leitidee",
       nav_realizations: "Realisierungen",
@@ -232,6 +247,14 @@
     }
   };
 
+  const weekdayNames = {
+    en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    fr: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    de: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
+  };
+
+  const moonEmoji = { new: "🌑", waxing: "🌒", full: "🌕", waning: "🌘" };
+
   const validLanguages = new Set(Object.keys(translations));
   const page = document.body.dataset.page || "home";
   const languageButtons = Array.from(document.querySelectorAll("[data-language]"));
@@ -289,6 +312,45 @@
       target.searchParams.set("lang", language);
       link.setAttribute("href", `${target.pathname.split("/").pop() || "index.html"}?${target.searchParams.toString()}${target.hash}`);
     });
+
+    renderCurrentShamrockDate(language);
+  }
+
+  function renderCurrentShamrockDate(language) {
+    const engine = window.ShamrockCalendarEngine;
+    const dateElement = document.querySelector("#calendar-current-date");
+    if (!engine || !dateElement) return;
+    const now = new Date();
+    const result = engine.convertRevisedJulianDate({
+      year: now.getUTCFullYear(),
+      month: now.getUTCMonth() + 1,
+      day: now.getUTCDate()
+    });
+    if (!result.ok) return;
+    const period = result.beforeSunset || result.afterSunset;
+    const dictionary = translations[language] || translations.en;
+    dateElement.textContent = `${weekdayNames[language][period.weekday]} · ${period.shamrock.day}. ${period.shamrock.monthName} ${period.shamrock.year}`;
+    document.querySelector("#calendar-current-moon").textContent = moonEmoji[period.moonPhase];
+    document.querySelector("#calendar-current-phase").textContent = `${moonEmoji[period.moonPhase]} ${dictionary[`calendar_phase_${period.moonPhase}`]}`;
+    const festivalElement = document.querySelector("#calendar-current-festival");
+    if (period.festival) {
+      const text = dictionary.calendar_festival
+        .replace("{name}", period.festival.name)
+        .replace("{day}", String(period.festival.dayNumber));
+      festivalElement.textContent = `🍀 ${period.festival.emoji} ${text}`;
+      festivalElement.hidden = false;
+    } else {
+      festivalElement.hidden = true;
+    }
+  }
+
+  function scheduleUtcRefresh() {
+    const now = new Date();
+    const nextMidnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+    window.setTimeout(() => {
+      renderCurrentShamrockDate(document.documentElement.lang.slice(0, 2));
+      scheduleUtcRefresh();
+    }, Math.max(1000, nextMidnight - now.getTime() + 250));
   }
 
   languageButtons.forEach((button) => {
@@ -308,4 +370,5 @@
   });
 
   translate(preferredLanguage(), false);
+  scheduleUtcRefresh();
 })();

@@ -625,7 +625,7 @@ h3 {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem;
-  min-height: 74px;
+  min-height: 94px;
   padding: 0.85rem 1.2rem;
   border: 1px solid rgba(239, 199, 111, 0.42);
   border-radius: 18px;
@@ -655,15 +655,35 @@ h3 {
   line-height: 1.3;
 }
 
-.calendar-launch-copy strong {
+.calendar-launch-kicker {
   color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
+  font-size: 0.72rem;
+  font-weight: 850;
   letter-spacing: 0.09em;
 }
 
+.calendar-launch-copy strong {
+  margin-top: 0.12rem;
+  color: var(--ivory);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.calendar-launch-phase,
+.calendar-launch-festival {
+  margin-top: 0.16rem;
+  color: var(--aqua-bright);
+  font-size: 0.78rem;
+  font-weight: 720;
+}
+
+.calendar-launch-festival { color: var(--gold); }
+.calendar-launch-festival[hidden] { display: none; }
+
 .calendar-launch-copy small {
-  margin-top: 0.2rem;
+  margin-top: 0.35rem;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 650;
