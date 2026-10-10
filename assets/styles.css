@@ -815,3 +815,30 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Publication status and shared booklet — October 2026. */
+.hero-actions { margin: 1.5rem 0; }
+.hero-actions .button-link { margin: 0; }
+.booklet-section { padding-bottom: 3rem; }
+.booklet-panel { padding: clamp(1.4rem, 4vw, 3rem); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, #123d44, #071c23); }
+.booklet-panel h2 { max-width: 900px; }
+.booklet-panel p { max-width: 800px; }
+.booklet-panel .button-link { margin-top: 1rem; }
+.pending-section { padding-block: 2rem 5rem; }
+.pending-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+.pending-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 18px; background: rgba(7, 28, 35, .65); min-width: 0; }
+.pending-card h3 { font-size: 1.25rem; overflow-wrap: anywhere; }
+.pending-card > p:not(.availability), .project-domain { color: var(--muted); }
+.availability { color: var(--gold); font-size: .8rem; font-weight: 800; letter-spacing: .06em; }
+.project-domain, .registration { overflow-wrap: anywhere; }
+.registration { color: var(--muted); font-size: .85rem; }
+.practice-section { padding-top: 2.5rem; }
+.practice-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.practice-links .button-link { margin: 0; }
+.footer-inner { row-gap: 1rem; }
+.footer-inner .registration { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 650px) {
+  .pending-grid { grid-template-columns: 1fr; }
+  .practice-links { flex-direction: column; }
+  .booklet-main h1 { overflow-wrap: anywhere; }
+}
