@@ -7,10 +7,10 @@
   <meta name="description" content="Singer Shamrock develops original ideas that give thinking new possibilities.">
   <meta name="theme-color" content="#071a22">
   <link rel="canonical" href="https://singershamrock.com/">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="assets/styles.css?v=20260927-1">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/styles.css?v=20261010-1">
   <script src="https://calendar.singershamrock.com/assets/calendar-engine.js?v=20260927-1" defer></script>
-  <script src="assets/site.js?v=20260927-1" defer></script>
+  <script src="/assets/site.js?v=20261010-1" defer></script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -22,7 +22,7 @@
 
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="wordmark preserve-lang" href="index.html" aria-label="Singer Shamrock Enterprises — Home">
+      <a class="wordmark preserve-lang" href="/index.html" aria-label="Singer Shamrock Enterprises — Home">
         <span>SINGER SHAMROCK</span>
         <small>ENTERPRISES</small>
       </a>
@@ -30,6 +30,7 @@
       <nav class="primary-nav" aria-label="Primary navigation" data-i18n-aria="nav_label">
         <a href="#purpose" data-i18n="nav_purpose">Purpose</a>
         <a href="#realizations" data-i18n="nav_realizations">Realizations</a>
+        <a class="preserve-lang" href="/booklets.html" data-i18n="booklets_link">Booklets</a>
         <a href="#status" data-i18n="nav_status">Status</a>
       </nav>
 
@@ -44,7 +45,7 @@
   <main id="main">
     <section class="calendar-launch shell">
       <a
-        class="calendar-launch-link"
+        class="calendar-launch-link" data-tool-language
         href="https://calendar.singershamrock.com/"
         aria-label="Open the Shamrock Calendar"
         data-i18n-aria="calendar_link_aria"
@@ -63,17 +64,18 @@
 
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-mark">
-        <img src="assets/singershamrock-logo-domain.png" width="1536" height="1635" alt="Singer Shamrock Enterprises" fetchpriority="high">
+        <img src="/assets/singershamrock-logo-domain.png" width="1536" height="1635" alt="Singer Shamrock Enterprises" fetchpriority="high">
       </div>
 
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="hero_eyebrow">IDEAS · EMPOWERMENT · HARMONY</p>
         <h1 id="hero-title" data-i18n="hero_title">We give thinking new possibilities.</h1>
         <p class="hero-lead" data-i18n="hero_lead">Singer Shamrock develops original ideas that help people think more clearly, act more consciously and improve their lives independently — for the good of people, flora and fauna.</p>
+        <div class="hero-actions"><a class="button-link preserve-lang" href="/booklets.html" data-i18n="booklets_cta">About the upcoming booklet</a></div>
         <p class="principle-line" data-i18n="hero_principle">We do not take thinking away. We create ideas that enable it.</p>
         <div class="status-chip" aria-label="Current brand status" data-i18n-aria="status_aria">
           <span data-i18n="status_label">Brand of Pierre Christian Ulrich Singer EI</span>
-          <b data-i18n="status_date">SIRET en cours d’attribution</b>
+          <b data-i18n="status_date">SIREN 131 236 408</b>
         </div>
       </div>
     </section>
@@ -90,46 +92,68 @@
 
     <section class="projects shell" id="realizations" aria-labelledby="projects-title">
       <div class="section-heading">
-        <p class="section-kicker" data-i18n="projects_kicker">REALIZATIONS</p>
-        <h2 id="projects-title" data-i18n="projects_title">SSE ideas at work.</h2>
-        <p data-i18n="projects_intro">Four independent projects. One shared principle: ideas should expand what people can do.</p>
+        <p class="section-kicker" data-i18n="projects_kicker">FREE TOOLS</p>
+        <h2 id="projects-title" data-i18n="projects_title">Start practising.</h2>
+        <p data-i18n="projects_intro">BRATS11 and BDAYMETHOD are ready to use. Both tools are completely free.</p>
       </div>
 
       <div class="project-grid">
         <article class="project-card card-bday">
-          <p class="card-label" data-i18n="project_label">REALIZATION OF AN SSE IDEA</p>
+          <p class="card-label" data-i18n="project_label">FREE · READY TO USE</p>
           <h3>BDAY METHOD</h3>
-          <p data-i18n="bday_text">A Singer Shamrock idea built around dates, patterns and personal discovery.</p>
-          <span class="project-link project-link-disabled" aria-disabled="true">
-            <span data-i18n="visit_bday">bdaymethod.com — not yet linked</span>
-          </span>
+          <p data-i18n="bday_text">Work out the weekday of a date using memorable anchors and a clear sequence of calculations.</p>
+          <a class="project-link" data-tool-language href="https://bdaymethod.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit_bday">Open BDAYMETHOD</span><span aria-hidden="true">↗</span>
+          </a>
         </article>
 
         <article class="project-card card-brats">
-          <p class="card-label" data-i18n="project_label">REALIZATION OF AN SSE IDEA</p>
+          <p class="card-label" data-i18n="project_label">FREE · READY TO USE</p>
           <h3>BRATS 11</h3>
-          <p data-i18n="brats_text">Mental-arithmetic training that rewards shortcuts, decomposition and flexible thinking instead of rigid calculation.</p>
-          <a class="project-link" href="https://brats11.com/" target="_blank" rel="noopener">
-            <span data-i18n="visit_brats">Visit brats11.com</span><span aria-hidden="true">↗</span>
+          <p data-i18n="brats_text">Practise mental arithmetic with structured B11 sequences and the ×11 Killer Move.</p>
+          <a class="project-link" data-tool-language href="https://brats11.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit_brats">Open BRATS11</span><span aria-hidden="true">↗</span>
           </a>
         </article>
 
-        <article class="project-card card-sinnbild">
-          <p class="card-label" data-i18n="project_label">REALIZATION OF AN SSE IDEA</p>
-          <h3>SINNBILD49</h3>
-          <p data-i18n="sinnbild_text">A visual reflection method with 49 images and ten positions — not fortune-telling, but a change of perspective.</p>
-          <a class="project-link" href="https://sinnbild49.com/" target="_blank" rel="noopener">
-            <span data-i18n="visit_sinnbild">Visit sinnbild49.com</span><span aria-hidden="true">↗</span>
-          </a>
-        </article>
+      </div>
+    </section>
 
-        <article class="project-card card-texthim">
-          <p class="card-label" data-i18n="project_label">REALIZATION OF AN SSE IDEA</p>
-          <h3>TEXT HIM OR NOT?</h3>
-          <p data-i18n="texthim_text">A guided decision tool that helps women separate facts from anxiety and choose a respectful next step.</p>
-          <a class="project-link" href="https://texthimornot.com/" target="_blank" rel="noopener">
-            <span data-i18n="visit_texthim">Visit texthimornot.com</span><span aria-hidden="true">↗</span>
-          </a>
+    <section class="booklet-section shell" aria-labelledby="booklet-heading">
+      <div class="booklet-panel">
+        <p class="section-kicker" data-i18n="booklets_kicker">BRATS11 + BDAYMETHOD</p>
+        <h2 id="booklet-heading" data-i18n="booklets_heading">More confidence with numbers — for work, education and everyday life.</h2>
+        <p data-i18n="booklets_teaser">We are preparing a shared booklet for BRATS11 and BDAYMETHOD. Explore the free tools while it takes shape.</p>
+        <a class="button-link preserve-lang" href="/booklets.html" data-i18n="booklets_cta">About the upcoming booklet</a>
+      </div>
+    </section>
+
+    <section class="pending-section shell" id="in-preparation" aria-labelledby="pending-title">
+      <div class="section-heading">
+        <p class="section-kicker" data-i18n="pending_kicker">WHAT COMES NEXT</p>
+        <h2 id="pending-title" data-i18n="pending_title">More ideas in preparation.</h2>
+        <p data-i18n="pending_intro">We are updating these projects. Their revised versions will be linked here when they are ready.</p>
+      </div>
+      <div class="pending-grid">
+        <article class="pending-card">
+          <p class="availability" data-i18n="pending_status">In preparation</p>
+          <h3>SPOOKMYLOOK</h3><p data-i18n="spook_text">A Halloween look tool, from inspiration to outfit.</p>
+          <span class="project-domain">spookmylook.com</span>
+        </article>
+        <article class="pending-card">
+          <p class="availability" data-i18n="pending_status">In preparation</p>
+          <h3>MATHFINALGIRL</h3><p data-i18n="finalgirl_text">A maths series for teenagers.</p>
+          <span class="project-domain">mathfinalgirl.com</span>
+        </article>
+        <article class="pending-card">
+          <p class="availability" data-i18n="pending_status">In preparation</p>
+          <h3>SINNBILD49</h3><p data-i18n="sinnbild_text">A visual reflection method with 49 images and ten positions — not fortune-telling, but a change of perspective.</p>
+          <span class="project-domain">sinnbild49.com</span>
+        </article>
+        <article class="pending-card">
+          <p class="availability" data-i18n="pending_status">In preparation</p>
+          <h3>TEXT HIM OR NOT?</h3><p data-i18n="texthim_text">A guided decision tool that helps women separate facts from anxiety and choose a respectful next step.</p>
+          <span class="project-domain">texthimornot.com</span>
         </article>
       </div>
     </section>
@@ -138,10 +162,11 @@
       <div class="status-panel">
         <div>
           <p class="section-kicker" data-i18n="status_kicker">CURRENT STATUS</p>
-          <h2 id="status-title" data-i18n="status_title">A brand with a clearly identified operator.</h2>
+          <h2 id="status-title" data-i18n="status_title">A registered business. Original ideas.</h2>
         </div>
         <div>
           <p data-i18n="status_text">Singer Shamrock Enterprises is a brand of Pierre Christian Ulrich Singer, Entrepreneur individuel (EI). It is not a separate company or legal entity.</p>
+          <p class="registration">SIREN 131 236 408 · RCS Chalon-sur-Saône</p>
           <a class="mail-link" href="mailto:pcusinger@gmail.com">pcusinger@gmail.com</a>
         </div>
       </div>
@@ -155,9 +180,11 @@
         <p><span data-i18n="responsible_today">Operator</span>: Pierre Christian Ulrich Singer, Entrepreneur individuel (EI)</p>
       </div>
       <nav aria-label="Legal" data-i18n-aria="legal_nav_label">
-        <a class="preserve-lang" href="imprint.html" data-i18n="legal_link">Legal notice</a>
-        <a class="preserve-lang" href="privacy.html" data-i18n="privacy_link">Privacy</a>
+        <a class="preserve-lang" href="/booklets.html" data-i18n="booklets_link">Booklets</a>
+        <a class="preserve-lang" href="/imprint.html" data-i18n="legal_link">Legal notice</a>
+        <a class="preserve-lang" href="/privacy.html" data-i18n="privacy_link">Privacy</a>
       </nav>
+      <p class="registration">SIREN 131 236 408 · RCS Chalon-sur-Saône</p>
       <p class="copyright">© <span data-current-year>2026</span> Pierre Christian Ulrich Singer EI</p>
     </div>
   </footer>
