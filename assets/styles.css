@@ -842,3 +842,43 @@ h3 {
   .practice-links { flex-direction: column; }
   .booklet-main h1 { overflow-wrap: anywhere; }
 }
+
+/* A compact space for creative productions alongside the existing projects. */
+.film-section {
+  padding-bottom: 3rem;
+}
+
+.film-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(7, 28, 35, 0.65);
+}
+
+.film-copy {
+  flex: 1 1 28rem;
+  min-width: 0;
+}
+
+.film-copy .section-kicker {
+  margin-bottom: 0.65rem;
+}
+
+.film-copy h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+.film-copy > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.film-panel .button-link {
+  max-width: 100%;
+  margin: 0;
+}
